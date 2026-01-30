@@ -449,7 +449,8 @@ for sector_name, subsector_data in SUBSECTOR_MAP.items():
             })
  
 df_master_sub_pdf = pd.DataFrame(pdf_subsector_table_list_raw)
-df_master_sub_pdf = df_master_sub_pdf.sort_values(by=['Sector', 'Subsector'])
+if not df_master_sub_pdf.empty:
+    df_master_sub_pdf = df_master_sub_pdf.sort_values(by=['Sector', 'Subsector'])
  
  
 with tab_subsector:
